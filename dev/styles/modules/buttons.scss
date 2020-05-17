@@ -1,0 +1,39 @@
+.btn {
+  padding: 0 30px;
+  height: 45px;
+  border-radius: 35px;
+  color: #fff;
+  background: $violet;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  font-size: 15px;
+  @include transition;
+
+  &:hover {
+    background: #e8334d;
+  }
+  &.white{
+    background: $white;
+    color: #2d2d2d;
+  }
+  &.blue{
+    background: $blue;
+    color: #fff;
+  }
+}
+.btns{
+  .btn{
+    margin: 0 15px 10px;
+  }
+}
+a.btn {
+  @extend .btn;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover{
+    color: #FFFFFF;
+  }
+}

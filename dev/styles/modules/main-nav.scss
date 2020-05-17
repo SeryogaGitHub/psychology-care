@@ -1,0 +1,81 @@
+.nav-container{
+  background: rgba(255, 255, 255, .7);
+  box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.5);
+  margin-bottom: 50px;
+  z-index: 3!important;
+
+  .phone-number-btn{
+    justify-content: center;
+    margin-top: 25px;
+  }
+}
+.main-nav{
+  display: flex;
+
+  .toggle, a{
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: .5px;
+    padding: 15px 0;
+    @include rw-font-7;
+
+    &:hover{
+      color: $violet;
+    }
+  }
+  .dropdown{
+    .content{
+      min-width: 150px;
+      box-shadow: 0 10px 10px -5px rgba(0,0,0,.5);
+
+      a{
+        padding: initial;
+      }
+      li + li{
+        margin-top: 5px;
+      }
+    }
+  }
+  & > li{
+    & + li{
+      margin-left: 40px;
+    }
+  }
+  .active{
+    color: $violet;
+  }
+}
+@media screen and (max-width: 992px){
+  .main-header{
+    .nav-container{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 25px 0;
+      display: none;
+      height: calc(100vh - 92px);
+      overflow-y: auto;
+    }
+    .main-nav{
+      flex-direction: column;
+      align-items: center;
+
+      li + li{
+        margin: 10px 0 0 0;
+      }
+      .dropdown{
+        width: 100%;
+        text-align: center;
+
+        .toggle{
+          display: inline-block;
+        }
+        .content{
+          width: 100%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@mixin box($width,$height: $width) {
+  width: $width;
+  height: $height;
+}
+@mixin bg-cover {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+@mixin transition($element: all, $time: .3s, $function: linear) {
+  transition: $element $time $function;
+}
+@mixin pos-center{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
+@mixin gradient ($origin: left, $start: #ffffff, $stop: #000000) {
+  background: $start;
+  background: linear-gradient($origin, $start, $stop);
+}
+.text-center{
+  text-align: center;
+}

@@ -1,0 +1,103 @@
+@import "utils/utils";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.main-content { flex: 1 0 auto; }
+
+.center {
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 15px;
+}
+.ham {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.hamRotate.active {
+  transform: rotate(45deg);
+}
+.hamRotate180.active {
+  transform: rotate(180deg);
+}
+.line {
+  fill:none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke:#000;
+  stroke-width:5.5;
+  stroke-linecap:round;
+}
+.ham1 .top {
+  stroke-dasharray: 40 139;
+}
+.ham1 .bottom {
+  stroke-dasharray: 40 180;
+}
+.ham1.active .top {
+  stroke-dashoffset: -98px;
+}
+.ham1.active .bottom {
+  stroke-dashoffset: -138px;
+}
+.dropdown{
+  position: relative;
+
+  .toggle{
+    cursor: pointer;
+    padding-right: 20px;
+    position: relative;
+    @include transition;
+
+    &:after{
+      content: "";
+      width: 10px;
+      height: 10px;
+      background: url(../img/icons/arrow-down.svg) no-repeat center/cover;
+      @include pos-center;
+      left: auto;
+      @include transition;
+    }
+  }
+  &.active{
+    .content{
+      visibility: visible;
+      opacity: 1;
+    }
+    .toggle{
+      &:after{
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .content{
+    position: absolute;
+    top: 100%;
+    min-width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    background: #fff;
+    padding: 15px;
+    @include transition;
+    z-index: 3;
+  }
+}
+.show-mobile{
+  display: none;
+}
+@media screen and (max-width: 992px){
+  .hide-mobile{
+    display: none;
+  }
+  .show-mobile{
+    display: block;
+  }
+}

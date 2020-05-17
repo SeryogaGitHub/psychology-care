@@ -1,0 +1,110 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  font-size: 14px;
+  letter-spacing: .3px;
+  @include os-font-4;
+
+  &.hide-scroll{
+    overflow-y: hidden;
+  }
+}
+html, body{
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+*::selection {
+  background: $violet;
+  color: #fff;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+h1, h2, h3, h4, h5, h6{
+  @include rw-font-8;
+}
+h1{font-size: 45px;margin-bottom: 25px;}
+h2{font-size: 40px;}
+h3{font-size: 30px;}
+h4{font-size: 25px;}
+h5{font-size: 20px;}
+h6{font-size: 16px;}
+p{
+  & + p{
+    margin-top: 20px;
+  }
+}
+
+ol, ul {list-style: none;}
+
+img {max-width: 100%;display: block;}
+
+input,
+button,
+label,
+textarea,
+select { @include os-font-4; -webkit-tap-highlight-color: transparent;}
+
+
+input,
+select,
+button { outline: none; appearance: none;}
+
+button{border: none; background: transparent;}
+
+a{
+  display: inline-block;
+  color: #000;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  @include transition;
+
+  &:hover{
+    color: $violet;
+  }
+}
+input:not([type="submit"]){
+  width: 100%;
+  height: 45px;
+  padding: 0 15px;
+  font-size: 16px;
+  border: none;
+}
+textarea{
+  max-width: 100%;
+  outline: none;
+  display: block;
+  padding: 15px;
+  min-height: 175px;
+  font-size: 16px;
+  width: 100%;
+  resize: none;
+}
+address{
+  font-style: normal;
+}
+strong{
+  font-weight: 700;
+}
+::-webkit-input-placeholder {color:#000;opacity:1;}
+::-moz-placeholder          {color:#000;opacity:1;}
+:-moz-placeholder           {color:#000;opacity:1;}
+:-ms-input-placeholder      {color:#000;opacity:1;}
+@media screen and (max-width: 992px){
+  h1{
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+}
